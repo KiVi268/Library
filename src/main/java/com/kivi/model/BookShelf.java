@@ -35,6 +35,16 @@ public class BookShelf {
         booksOnShelf.add(book);
     }
 
+    public int searchBook(Book book) {
+            return booksOnShelf.indexOf(book);
+    }
+
+    public ArrayList searchBooks(Book book) {
+        ArrayList<Book> books = new ArrayList<>();
+
+        return books;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
