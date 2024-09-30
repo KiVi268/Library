@@ -39,10 +39,13 @@ public class BookShelf {
             return booksOnShelf.indexOf(book);
     }
 
-    public ArrayList searchBooks(Book book) {
-        ArrayList<Book> books = new ArrayList<>();
-
-        return books;
+    public Book searchBooksByObject(Book book) {
+        for (Book name : booksOnShelf) {
+            if (name.equals(book)) {
+                return booksOnShelf.get(searchBook(name));
+            }
+        }
+        return null;
     }
 
     @Override
