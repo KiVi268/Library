@@ -1,6 +1,7 @@
 package com.kivi.model;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Library {
@@ -45,6 +46,38 @@ public class Library {
     public void addBookShelf(BookShelf bookShelf) {
         bookShelfs.add(bookShelf);
     }
+
+    public int searchBookShelfIndex(String bookShelfName) {
+        return bookShelfs.indexOf(bookShelfName);
+    }
+
+    public BookShelf findShelfByObject(BookShelf targetShelf) {
+        for (BookShelf shelf : bookShelfs) {
+            if (shelf.equals(targetShelf)) {
+                return shelf;
+            }
+        }
+        return null;
+    }
+
+    public Book findBookByName(String name) {
+        for (BookShelf shelf : bookShelfs) {
+            for (Book book : shelf.getBooksOnShelf()) {
+                if (book.getName().equalsIgnoreCase(name)) {
+                    return book;
+                }
+            }
+        }
+        return null;
+    }
+
+    public int[] findBookByObject(Book targetBook) {
+        for (int i = 0; i < bookShelfs.size(); i++) {
+            bookShelfs.get(i).searchBooksByObject(targetBook);
+        }
+        return null;
+    }
+
 
     @Override
     public boolean equals(Object o) {
