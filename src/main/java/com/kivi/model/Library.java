@@ -78,6 +78,9 @@ public class Library {
         return null;
     }
 
+    public void deleteBookShelf(BookShelf bookShelf) {
+        bookShelfs.remove(bookShelf);
+    }
 
     @Override
     public boolean equals(Object o) {

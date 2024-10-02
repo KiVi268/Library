@@ -48,6 +48,10 @@ public class BookShelf {
         return null;
     }
 
+    public void deleteBook(Book book) {
+        booksOnShelf.remove(book);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
