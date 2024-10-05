@@ -1,14 +1,15 @@
 package com.kivi.util;
 
+import com.kivi.model.BookShelf;
 import com.kivi.model.Library;
 
 import java.awt.print.Book;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Generathor {
 
     private Random random = new Random();
-    private StringBuilder randomeString = new StringBuilder();
     private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
     public int getRandomNumber(int min, int max) {
@@ -22,6 +23,15 @@ public class Generathor {
             sb.append(CHARACTERS.charAt(randomIndex));
         }
         return sb.toString();
+    }
+
+    public ArrayList<BookShelf> generateBookShelfs(int quantity){
+        ArrayList<BookShelf> bookShelfs = new ArrayList<>();
+        for (int i = 1; i <= quantity; i++) {
+            BookShelf bookShelf = new BookShelf();
+            bookShelfs.add(bookShelf);
+        }
+        return bookShelfs;
     }
 
     public String getRandomBook(int min, int max) {
@@ -40,6 +50,7 @@ public class Generathor {
         Library library = new Library();
         library.setNameOfLibrary(generateRandomString(length));
         library.setAddress(generateRandomString(length));
+        library.setBookShelfs(generateBookShelfs(random.nextInt((20 - 10) + 1) + 10));
         return library.toString();
     }
 }
