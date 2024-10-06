@@ -51,15 +51,6 @@ public class Library {
         return bookShelfs.indexOf(bookShelfName);
     }
 
-    public BookShelf findShelfByObject(BookShelf targetShelf) {
-        for (BookShelf shelf : bookShelfs) {
-            if (shelf.equals(targetShelf)) {
-                return shelf;
-            }
-        }
-        return null;
-    }
-
     public Book findBookByName(String name) {
         for (BookShelf shelf : bookShelfs) {
             for (Book book : shelf.getBooksOnShelf()) {
