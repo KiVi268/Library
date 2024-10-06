@@ -134,13 +134,7 @@ public class Main {
         System.out.println("Found book: " + foundBook);
         System.out.println();
 
-        // Test 4: Finding a bookshelf by object
-        System.out.println("Test 4: Searching for a bookshelf by object:");
-        BookShelf foundShelf = library1.findShelfByObject(shelf1);  // Should return the shelf
-        System.out.println("Found shelf: " + foundShelf);
-        System.out.println();
-
-        // Test 5: Adding another bookshelf and searching it
+        // Test 4: Adding another bookshelf and searching it
         shelf2.add(new Book("Brave New World", "Aldous Huxley", 1932));
         library1.addBookShelf(shelf2);
 
@@ -148,21 +142,21 @@ public class Main {
         System.out.println(library1.toString());
         System.out.println();
 
-        // Test 6: Deleting a bookshelf from the library
+        // Test 5: Deleting a bookshelf from the library
         System.out.println("Test 6: Deleting a bookshelf:");
         library1.deleteBookShelf(shelf1);
         System.out.println("After deleting shelf1:");
         System.out.println(library1.toString());
         System.out.println();
 
-        // Test 7: Testing equals method
+        // Test 6: Testing equals method
         System.out.println("Test 7: Testing equals method:");
         Library library3 = new Library("Community Library", "456 Oak Avenue", new ArrayList<>(bookShelfs));
         System.out.println("library2 equals library3: " + library2.equals(library3));  // should return true
         System.out.println("library1 equals library2: " + library1.equals(library2));  // should return false
         System.out.println();
 
-        // Test 8: Testing hashCode method
+        // Test 7: Testing hashCode method
         System.out.println("Test 8: Testing hashCode method:");
         System.out.println("library2.hashCode() == library3.hashCode(): " + (library2.hashCode() == library3.hashCode()));  // should return true
         System.out.println();
